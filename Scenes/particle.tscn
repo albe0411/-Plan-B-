@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct6fjei4vg00u"]
+
+[ext_resource type="Script" uid="uid://dka12j8n2y4h2" path="res://Scripts/particle.gd" id="1_u2rni"]
+[ext_resource type="Texture2D" uid="uid://cije6vqqj8jm2" path="res://Assets/circle-256.png" id="2_8weg4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_osap4"]
+radius = 77.0
+
+[node name="partikle" type="RigidBody2D"]
+script = ExtResource("1_u2rni")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_8weg4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_osap4")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1

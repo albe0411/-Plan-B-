@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceh5dx73p58o2"]
+
+[ext_resource type="Script" uid="uid://dmuog0ptoroyn" path="res://Scripts/calculator.gd" id="1_xst5o"]
+[ext_resource type="PackedScene" uid="uid://ct6fjei4vg00u" path="res://Scenes/particle.tscn" id="2_ectdk"]
+
+[node name="calculator" type="Node2D"]
+script = ExtResource("1_xst5o")
+
+[node name="partikle" parent="." instance=ExtResource("2_ectdk")]
+position = Vector2(222, 188)
+
+[node name="partikle2" parent="." instance=ExtResource("2_ectdk")]
+position = Vector2(868, 336)
+
+[node name="partikle3" parent="." instance=ExtResource("2_ectdk")]
+position = Vector2(447, 479)
