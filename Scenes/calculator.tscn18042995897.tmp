@@ -7,10 +7,10 @@
 script = ExtResource("1_xst5o")
 
 [node name="partikle" parent="." instance=ExtResource("2_ectdk")]
-position = Vector2(312, 384)
+position = Vector2(222, 188)
 
 [node name="partikle2" parent="." instance=ExtResource("2_ectdk")]
-position = Vector2(856, 480)
+position = Vector2(473, 501)
 
 [node name="partikle3" parent="." instance=ExtResource("2_ectdk")]
-position = Vector2(656, 192)
+position = Vector2(836, 284)

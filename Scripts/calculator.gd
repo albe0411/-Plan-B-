@@ -2,29 +2,29 @@ extends Node2D
 
 
 func _ready() -> void:
-	for partikle in get_children():
+	for particle in get_children():
 		var Farray = []
 		var Ftotal = Vector2()
 		
 		var particles = get_children()
-		particles.erase(partikle)
+		particles.erase(particle)
 		
 		for i in particles:
-			var r =  i.position - partikle.position
+			var r =  i.position - particle.position
 			var F = Vector2()
-			F.x = partikle.mass * i.mass / r.x ** 2
-			F.y = partikle.mass * i.mass / r.y ** 2
+			var dot_product = 0
+			dot_product = (abs(r) * abs(r) * abs(r)).x + (abs(r) * abs(r) * abs(r)).y
 			
-			if r.x < 0:
-				F.x *= -1
-			if r.y < 0:
-				F.y *= -1
-			
+			F = ((particle.mass * i.mass * r) / dot_product)
+
 			Farray.append(F)
+			
 		for F in Farray:
 			Ftotal += F
-		
-		partikle.get_child(2).text = str(Ftotal)
+
+		particle.get_child(2).text = str(Ftotal)
+		particle.Ftotal = Ftotal
+
 
 
 # Called every frame.
