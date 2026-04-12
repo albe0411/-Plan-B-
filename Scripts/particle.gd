@@ -3,11 +3,8 @@ extends RigidBody2D
 var total_force = Vector2()
 
 
-func _ready() -> void:
-	pass
-
 func _draw() -> void:
-	draw_line(self.position - global_position, self.position - global_position + total_force * 25, Color.RED, 4)
+	draw_line(self.position - global_position, self.position - global_position + total_force * 0.5, Color.RED, 4)
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	apply_central_force(total_force)

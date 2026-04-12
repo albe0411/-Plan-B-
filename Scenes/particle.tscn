@@ -7,11 +7,11 @@
 friction = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_osap4"]
-radius = 77.0
+radius = 77.00649
 
 [node name="partikle" type="RigidBody2D"]
 z_index = 1
-mass = 100.0
+mass = 500.0
 physics_material_override = SubResource("PhysicsMaterial_u2rni")
 lock_rotation = true
 angular_damp = 100.0

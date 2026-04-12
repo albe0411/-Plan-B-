@@ -1,28 +1,27 @@
 extends Node2D
 
 
-func _ready() -> void:
-	pass
-
 func _process(delta: float) -> void:
-	for particle in get_children():
+	for particle1 in get_children():
 		var force_array = []
 		var total_force = Vector2()
 		
 		var particles = get_children()
-		particles.erase(particle)
+		particles.erase(particle1)
 		
-		for i in particles:
-			var radius =  i.position - particle.position
+		for particle2 in particles:
+			var radius = Vector2()
+			var dot_product = 0
 			var force = Vector2()
-			var dot_product = 0 
-			dot_product = (abs(radius) * radius * radius).x + (abs(radius) * radius * radius).y
 			
-			force = ((100 * particle.mass * i.mass * radius) / dot_product)
+			radius = particle2.position - particle1.position
+			dot_product = ((radius.x * radius.x) + (radius.y * radius.y)) ** 1.5
+			
+			force = ((particle1.mass * particle2.mass * radius) / abs(dot_product))
 
 			force_array.append(force)
-			
+		
 		for force in force_array:
 			total_force += force
 
-		particle.total_force = total_force
+		particle1.total_force = total_force
