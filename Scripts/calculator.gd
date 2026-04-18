@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 			var force = Vector2()
 			
 			radius = particle2.position - particle1.position
-			dot_product = ((radius.x * radius.x) + (radius.y * radius.y)) ** 1.5
+			dot_product = ((radius.x ** 2) + (radius.y ** 2)) ** 1.5
 			
 			force = ((particle1.mass * particle2.mass * radius) / abs(dot_product))
 
